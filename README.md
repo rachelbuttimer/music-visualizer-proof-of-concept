@@ -1,3 +1,7 @@
+**OS and Compiler**  
+This code will work with macOS, Windows, or Linux, and any IDE. This code was tested successfully on a macOS version Sequoia 15.3.1, and in the IntelliJ IDE.  
+No compiler is needed; the program runs in the Electron application in JavaScript.
+
 **Instructions**
 
 Install Sonic Pi from https://sonic-pi.net/  
