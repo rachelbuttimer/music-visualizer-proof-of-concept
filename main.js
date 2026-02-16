@@ -1,5 +1,22 @@
-const { app } = require('electron');
+const { app, BrowserWindow} = require('electron');
 const osc = require('osc');
+
+let mainWindow;
+
+function createWindow(){
+    mainWindow = new BrowserWindow({
+        width: 600,
+        height: 400,
+        webPreferences:{
+            nodeIntegration: true,
+            contextIsolation: false
+        }
+    });
+
+    mainWindow.loadFile("index.html");
+}
+
+app.whenReady().then(createWindow);
 
 //create OSC UDP port
 const udpPort = new osc.UDPPort({
@@ -14,11 +31,9 @@ udpPort.on("ready", function(){
 //listen for messages
 udpPort.on("message", function(oscMsg){
     console.log("Received OSC message:", oscMsg);
+    if(oscMsg.address === "/instrument/drum"){
+        mainWindow.webContents.send("drum-hit");
+    }
 });
 
 udpPort.open();
-
-//keep Electron running
-app.whenReady().then(function(){
-    console.log("Electron ready");
-});

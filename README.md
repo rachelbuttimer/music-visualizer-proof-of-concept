@@ -19,7 +19,7 @@ live_loop :test_osc do
     sleep 1
 end
 
-Press run. You should hear a single drum beat playing on a loop.
+Press run. You should hear a single drum beat playing on a loop, and a visualizer window will open, displaying a red circle whenever the drum beat is played.
 
 Now, in your IDE terminal, run the following command:  
 

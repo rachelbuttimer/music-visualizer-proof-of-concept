@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="">
+<head>
+    <meta charset="UTF-8" />
+    <title>Visualizer</title>
+    <style>
+        body {
+            margin: 0;
+            background: #111;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        #drum {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            background: #ff4d4d;
+            opacity: 0;
+            transition: opacity 0.1s;
+        }
+
+        #drum.active {
+            opacity: 1;
+        }
+    </style>
+</head>
+<body>
+<div id="drum"></div>
+
+<script>
+    const { ipcRenderer } = require("electron");
+    const drum = document.getElementById("drum");
+
+    console.log("Renderer loaded");
+
+    ipcRenderer.on("drum-hit", () => {
+        drum.classList.add("active");
+        setTimeout(() => drum.classList.remove("active"), 100);
+    });
+</script>
+</body>
+</html>
