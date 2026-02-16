@@ -1,0 +1,26 @@
+{
+  "name": "project-proposal",
+  "version": "1.0.0",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron .",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rachelbuttimer/music-visualizer-proof-of-concept.git"
+  },
+  "author": "Rachel Buttimer",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/rachelbuttimer/music-visualizer-proof-of-concept/issues"
+  },
+  "homepage": "https://github.com/rachelbuttimer/music-visualizer-proof-of-concept#readme",
+  "description": "",
+  "devDependencies": {
+    "electron": "^40.4.1"
+  },
+  "dependencies": {
+    "osc": "^2.4.5"
+  }
+}
